@@ -71,25 +71,9 @@ for x,projectile in pairs(cfg.personal_canno_projectile) do
                     }
                 },
                 light = {intensity = 0.5, size = 4},
-                animation =
-                {
-                    filename = "__base__/graphics/entity/rocket/rocket.png",
-                    frame_count = 8,
-                    line_length = 8,
-                    width = 9,
-                    height = 35,
-                    shift = {0, 0},
-                    priority = "high"
-                },
-                shadow =
-                {
-                    filename = "__base__/graphics/entity/rocket/rocket-shadow.png",
-                    frame_count = 1,
-                    width = 7,
-                    height = 24,
-                    priority = "high",
-                    shift = {0, 0}
-                },
+                -- 2.x redrew the rocket as one frame; the 1.1 strip no longer fits.
+                animation = util.table.deepcopy(data.raw.projectile["rocket"].animation),
+                shadow = util.table.deepcopy(data.raw.projectile["rocket"].shadow),
                 smoke =
                 {
                     {
