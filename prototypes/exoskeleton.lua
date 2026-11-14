@@ -21,7 +21,6 @@ for x,exo in pairs(cfg.personal_exoskeleton) do
                 place_as_equipment_result = exo.name,
                 subgroup = subgroup,
                 order = "dz-" .. exo.order,
-                default_request_amount = 5,
                 stack_size = 20
             },
             {

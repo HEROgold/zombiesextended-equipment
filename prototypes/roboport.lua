@@ -21,7 +21,6 @@ for x,roboport in pairs(cfg.personal_roboport) do
                 place_as_equipment_result = roboport.name,
                 subgroup = subgroup,
                 order = "e[robotics]-" .. roboport.order,
-                default_request_amount = 1,
                 stack_size = 20
             },
             {

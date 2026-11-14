@@ -29,7 +29,6 @@ for x,reactor in pairs(cfg.fusion_reactor_equipment) do
                 place_as_equipment_result = reactor.name,
                 subgroup = subgroup,
                 order = "a[energy-source]-c" .. reactor.order,
-                default_request_amount = 1,
                 stack_size = 20,
             },
             {

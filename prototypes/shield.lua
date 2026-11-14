@@ -22,7 +22,6 @@ for x,shield in pairs(cfg.personal_shield) do
                 place_as_equipment_result = shield.name,
                 subgroup = subgroup,
                 order = "a[shield]-" .. shield.order,
-                default_request_amount = 5,
                 stack_size = 20
             },
             {

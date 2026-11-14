@@ -81,11 +81,8 @@ for x,projectile in pairs(cfg.personal_canno_projectile) do
                         deviation = {0.15, 0.15},
                         frequency = 1,
                         position = {0, 1},
-                        slow_down_factor = 1,
                         starting_frame = 3,
                         starting_frame_deviation = 5,
-                        starting_frame_speed = 0,
-                        starting_frame_speed_deviation = 5
                     }
                 }
             },
@@ -122,7 +119,6 @@ for x,pcd in pairs(cfg.personal_cannon_device) do
                 place_as_equipment_result = pcd.name,
                 subgroup = subgroup,
                 order = "c" .. pcd.order,
-                default_request_amount = 5,
                 stack_size = 20
             },
             {
@@ -141,13 +137,6 @@ for x,pcd in pairs(cfg.personal_cannon_device) do
                     height = pcd.height,
                     type = "full"
                 },
-                ability_icon =
-                {
-                    filename = "__zombiesextended-equipment__/graphics/icons/personal-cannon-defense-mk2-remote.png",
-                    flags = { "icon" },
-                    mipmap_count = 4,
-                    size = 64
-                },
                 energy_source =
                 {
                     type = "electric",
@@ -163,10 +152,7 @@ for x,pcd in pairs(cfg.personal_cannon_device) do
                     range = pcd.distance,
                     ammo_type =
                     {
-                        type = "projectile",
                         energy_consumption = pcd.energy,
-                        projectile = pcd.projectile,
-                        speed = 1,
                         action =
                         {
                             {

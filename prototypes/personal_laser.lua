@@ -22,7 +22,6 @@ for x,pld in pairs(cfg.personal_laser_device) do
                 place_as_equipment_result = pld.name,
                 subgroup = subgroup,
                 order = "c" .. pld.order,
-                default_request_amount = 5,
                 stack_size = 20
             },
             {

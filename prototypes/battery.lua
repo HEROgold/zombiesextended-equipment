@@ -22,7 +22,6 @@ for x,battery in pairs(cfg.personal_battery) do
                 place_as_equipment_result = battery.name,
                 subgroup = subgroup,
                 order = "bz-" .. battery.order,
-                default_request_amount = 5,
                 stack_size = 20
             },
             {
