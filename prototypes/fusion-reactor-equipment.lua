@@ -1,13 +1,14 @@
 local ze = require("__zombiesextended-core__.lib")
+local cfg = require("configuration")
 local subgroup = "equipment"
 
-if settings.startup["zombies-use-seperate-tab"].value == true then
+if ze.separate_tab() then
   subgroup  = "ds-equipment"
 end
 
-for x,reactor in pairs(fusion_reactor_equipment) do
+for x,reactor in pairs(cfg.fusion_reactor_equipment) do
 
-    table.insert(data.raw["technology"][reactor.technology].effects, { type = "unlock-recipe", recipe = reactor.name })
+    ze.unlock(reactor.technology, reactor.name)
 
     data:extend(
         {

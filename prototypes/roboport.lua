@@ -1,24 +1,18 @@
 local ze = require("__zombiesextended-core__.lib")
+local cfg = require("configuration")
 local subgroup = "equipment"
 
-if settings.startup["zombies-use-seperate-tab"].value == true then
+if ze.separate_tab() then
   subgroup  = "ds-equipment"
 end
 
-for x,roboport in pairs(personal_roboport) do
+for x,roboport in pairs(cfg.personal_roboport) do
     
-    table.insert(data.raw["technology"][roboport.technology].effects, { type = "unlock-recipe", recipe = roboport.name })
+    ze.unlock(roboport.technology, roboport.name)
     
     data:extend(
         {   
-            {
-                type = "recipe",
-                name = roboport.name,
-                enabled = false,
-                energy_required = roboport.craft_time,
-                ingredients = ze.ingredients(roboport.ingredients),
-                results = ze.result(roboport.name)
-            },
+            ze.recipe(roboport),
             {
                 type = "item",
                 name = roboport.name,

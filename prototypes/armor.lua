@@ -1,14 +1,15 @@
 local ze = require("__zombiesextended-core__.lib")
+local cfg = require("configuration")
 
 local subgroup = "armor"
 
-if settings.startup["zombies-use-seperate-tab"].value == true then
+if ze.separate_tab() then
   subgroup  = "ds-equipment"
 end
 
-for x,armor in pairs(power_armor) do
+for x,armor in pairs(cfg.power_armor) do
     
-    table.insert(data.raw["technology"][armor.technology].effects, { type = "unlock-recipe", recipe = armor.name })
+    ze.unlock(armor.technology, armor.name)
 
     data:extend(
         {

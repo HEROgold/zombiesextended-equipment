@@ -1,6 +1,7 @@
 local ze = require("__zombiesextended-core__.lib")
+local cfg = require("configuration")
 
-for x,projectile in pairs(personal_canno_projectile) do
+for x,projectile in pairs(cfg.personal_canno_projectile) do
     data:extend(
         {
             {
@@ -110,14 +111,14 @@ end
 
 local subgroup = "military-equipment"
 
-if settings.startup["zombies-use-seperate-tab"].value == true then
+if ze.separate_tab() then
   subgroup  = "ds-equipment"
 end
 
 
-for x,pcd in pairs(personal_cannon_device) do
+for x,pcd in pairs(cfg.personal_cannon_device) do
     
-    table.insert(data.raw["technology"][pcd.technology].effects, { type = "unlock-recipe", recipe = pcd.name })
+    ze.unlock(pcd.technology, pcd.name)
     
     data:extend(
         {
@@ -205,9 +206,9 @@ for x,pcd in pairs(personal_cannon_device) do
     )
 end
 
-for x,pcd_remote in pairs(personal_cannon_device_remote) do
+for x,pcd_remote in pairs(cfg.personal_cannon_device_remote) do
     
-    table.insert(data.raw["technology"][pcd_remote.technology].effects, { type = "unlock-recipe", recipe = pcd_remote.name })
+    ze.unlock(pcd_remote.technology, pcd_remote.name)
     
     data:extend(
         {
