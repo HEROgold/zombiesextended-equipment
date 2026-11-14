@@ -1,3 +1,4 @@
+local ze = require("__zombiesextended-core__.lib")
 
 local subgroup = "armor"
 
@@ -16,15 +17,15 @@ for x,armor in pairs(power_armor) do
                 name = armor.name,
                 enabled = false,
                 energy_required = armor.craft_time,
-                ingredients = armor.ingredients,
-                result = armor.name,
+                ingredients = ze.ingredients(armor.ingredients),
+                results = ze.result(armor.name),
                 requester_paste_multiplier = 1
             },
             {
                 type = "armor",
                 name = armor.name,
                 icon = "__zombiesextended-equipment__/graphics/icons/" .. armor.name .. ".png",
-                icon_size = 64, icon_mipmaps = 4,
+                icon_size = 64,
                 resistances =
                 {
                     {

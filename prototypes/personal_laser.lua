@@ -1,3 +1,4 @@
+local ze = require("__zombiesextended-core__.lib")
 
 local subgroup = "military-equipment"
 
@@ -16,14 +17,14 @@ for x,pld in pairs(personal_laser_device) do
                 name = pld.name,
                 enabled = false,
                 energy_required = pld.craft_time,
-                ingredients = pld.ingredients,
-                result = pld.name
+                ingredients = ze.ingredients(pld.ingredients),
+                results = ze.result(pld.name)
             },
             {
                 type = "item",
                 name = pld.name,
                 icon = "__zombiesextended-equipment__/graphics/icons/" .. pld.name .. ".png",
-                icon_size = 64, icon_mipmaps = 4,
+                icon_size = 64,
                 placed_as_equipment_result = pld.name,
                 subgroup = subgroup,
                 order = "c" .. pld.order,
@@ -55,12 +56,12 @@ for x,pld in pairs(personal_laser_device) do
                 attack_parameters =
                 {
                     type = "beam",
+                    ammo_category = "laser",
                     cooldown = pld.cooldown,
                     range = pld.distance,
                     damage_modifier = pld.damage,
                     ammo_type =
                     {
-                        category = "laser",
                         energy_consumption = pld.energy_consumption_kJ .. "kJ",
                         action =
                         {

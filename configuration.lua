@@ -10,7 +10,7 @@ technologies = {
     { order = "a-a-b", name = "power-armor-mk4", count = 800, time = 60, prerequisite = {"power-armor-mk3"}, ingredients = science_t6 },
     { order = "a-a-c", name = "power-armor-mk5", count = 1000, time = 60, prerequisite = {"power-armor-mk4"}, ingredients = science_t6 },
 
-    { order = "a-b-a", name = "reactor-equipment-mk2", count = 400, time = 60, prerequisite = {"fusion-reactor-equipment"}, ingredients = science_t5 },
+    { order = "a-b-a", name = "reactor-equipment-mk2", count = 400, time = 60, prerequisite = {"fission-reactor-equipment"}, ingredients = science_t5 },
     { order = "a-b-b", name = "reactor-equipment-mk3", count = 600, time = 60, prerequisite = {"reactor-equipment-mk2"}, ingredients = science_t5 },
     { order = "a-b-c", name = "reactor-equipment-mk4", count = 800, time = 60, prerequisite = {"reactor-equipment-mk3"}, ingredients = science_t6 },
     { order = "a-b-d", name = "reactor-equipment-mk5", count = 1000, time = 60, prerequisite = {"reactor-equipment-mk4"}, ingredients = science_t6 },
@@ -40,7 +40,7 @@ power_armor = {
 }
 
 fusion_reactor_equipment = {
-    { order = "a", name = "fusion-reactor-equipment-mk2", width = 4, height = 4, power = "1000kW", sprite_size = 128, craft_time = mk1_craft_time, ingredients = { {"fusion-reactor-equipment", 1},{"complex-processing-unit", 2} }, technology = "reactor-equipment-mk2" },
+    { order = "a", name = "fusion-reactor-equipment-mk2", width = 4, height = 4, power = "1000kW", sprite_size = 128, craft_time = mk1_craft_time, ingredients = { {"fission-reactor-equipment", 1},{"complex-processing-unit", 2} }, technology = "reactor-equipment-mk2" },
     { order = "b", name = "fusion-reactor-equipment-mk3", width = 4, height = 4, power = "5000kW", sprite_size = 128, craft_time = mk2_craft_time, ingredients = { {"fusion-reactor-equipment-mk2", 5},{"complex-processing-unit", 4} }, technology = "reactor-equipment-mk3" },
     { order = "c", name = "microverse-battery-mk1", width = 6, height = 6, power = "10000kW", sprite_size = 256, craft_time = mk3_craft_time, ingredients = { {"fusion-reactor-equipment-mk3", 2},{"complex-processing-unit", 10},{"vibranium-plate", 10} }, technology = "reactor-equipment-mk4" },
     { order = "d", name = "microverse-battery-mk2", width = 6, height = 6, power = "20000kW", sprite_size = 256, craft_time = mk4_craft_time, ingredients = { {"microverse-battery-mk1", 2},{"complex-processing-unit", 20},{"vibranium-plate", 20} }, technology = "reactor-equipment-mk5" },
@@ -79,8 +79,8 @@ personal_canno_projectile = {
 }
 
 personal_cannon_device = {
-    { order = "d", name = "personal-cannon-defense-mk1", width = 6, height = 8, projectile = "pcd-projectile-1", auto = "true", distance = 70, cooldown = 20, energy = "10MJ", craft_time = mk1_craft_time, ingredients = { {"personal-laser-defense-equipment", 10},{"complex-processing-unit", 15},{"vibranium-plate", 40} }, technology = "personal-canon-defense-equipment-mk1" },
-    { order = "e", name = "personal-cannon-defense-mk2", width = 8, height = 16, projectile = "pcd-projectile-2", auto = "false", distance = 100, cooldown = 40, energy = "100MJ", craft_time = mk2_craft_time, ingredients = { {"personal-cannon-defense-mk1", 2},{"complex-processing-unit", 30},{"vibranium-plate", 80} }, technology = "personal-canon-defense-equipment-mk2" },
+    { order = "d", name = "personal-cannon-defense-mk1", width = 6, height = 8, projectile = "pcd-projectile-1", auto = true, distance = 70, cooldown = 20, energy = "10MJ", craft_time = mk1_craft_time, ingredients = { {"personal-laser-defense-equipment", 10},{"complex-processing-unit", 15},{"vibranium-plate", 40} }, technology = "personal-canon-defense-equipment-mk1" },
+    { order = "e", name = "personal-cannon-defense-mk2", width = 8, height = 16, projectile = "pcd-projectile-2", auto = false, distance = 100, cooldown = 40, energy = "100MJ", craft_time = mk2_craft_time, ingredients = { {"personal-cannon-defense-mk1", 2},{"complex-processing-unit", 30},{"vibranium-plate", 80} }, technology = "personal-canon-defense-equipment-mk2" },
 }
 
 personal_cannon_device_remote = {

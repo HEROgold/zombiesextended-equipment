@@ -1,3 +1,4 @@
+local ze = require("__zombiesextended-core__.lib")
 local subgroup = "equipment"
 
 if settings.startup["zombies-use-seperate-tab"].value == true then
@@ -15,15 +16,15 @@ for x,reactor in pairs(fusion_reactor_equipment) do
                 name = reactor.name,
                 enabled = false,
                 energy_required = reactor.craft_time,
-                ingredients = reactor.ingredients,
-                result = reactor.name,
+                ingredients = ze.ingredients(reactor.ingredients),
+                results = ze.result(reactor.name),
                 requester_paste_multiplier = 1
             },
             {
                 type = "item",
                 name = reactor.name,
                 icon = "__zombiesextended-equipment__/graphics/icons/" .. reactor.name .. ".png",
-                icon_size = 64, icon_mipmaps = 4,
+                icon_size = 64,
                 placed_as_equipment_result = reactor.name,
                 subgroup = subgroup,
                 order = "a[energy-source]-c" .. reactor.order,

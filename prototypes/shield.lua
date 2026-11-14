@@ -1,3 +1,4 @@
+local ze = require("__zombiesextended-core__.lib")
 local subgroup = "military-equipment"
 
 if settings.startup["zombies-use-seperate-tab"].value == true then
@@ -16,14 +17,14 @@ for x,shield in pairs(personal_shield) do
                 name = shield.name,
                 enabled = false,
                 energy_required = shield.craft_time,
-                ingredients = shield.ingredients,
-                result = shield.name
+                ingredients = ze.ingredients(shield.ingredients),
+                results = ze.result(shield.name)
             },
             {
                 type = "item",
                 name = shield.name,
                 icon = "__zombiesextended-equipment__/graphics/icons/" .. shield.name .. ".png",
-                icon_size = 64, icon_mipmaps = 4,
+                icon_size = 64,
                 placed_as_equipment_result = shield.name,
                 subgroup = subgroup,
                 order = "a[shield]-" .. shield.order,

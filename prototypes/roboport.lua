@@ -1,3 +1,4 @@
+local ze = require("__zombiesextended-core__.lib")
 local subgroup = "equipment"
 
 if settings.startup["zombies-use-seperate-tab"].value == true then
@@ -15,14 +16,14 @@ for x,roboport in pairs(personal_roboport) do
                 name = roboport.name,
                 enabled = false,
                 energy_required = roboport.craft_time,
-                ingredients = roboport.ingredients,
-                result = roboport.name
+                ingredients = ze.ingredients(roboport.ingredients),
+                results = ze.result(roboport.name)
             },
             {
                 type = "item",
                 name = roboport.name,
                 icon = "__zombiesextended-equipment__/graphics/icons/" .. roboport.name .. ".png",
-                icon_size = 64, icon_mipmaps = 4,
+                icon_size = 64,
                 placed_as_equipment_result = roboport.name,
                 subgroup = subgroup,
                 order = "e[robotics]-" .. roboport.order,

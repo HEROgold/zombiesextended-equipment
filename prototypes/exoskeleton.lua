@@ -1,3 +1,4 @@
+local ze = require("__zombiesextended-core__.lib")
 local subgroup = "equipment"
 
 if settings.startup["zombies-use-seperate-tab"].value == true then
@@ -15,14 +16,14 @@ for x,exo in pairs(personal_exoskeleton) do
                 name = exo.name,
                 enabled = false,
                 energy_required = exo.craft_time,
-                ingredients = exo.ingredients,
-                result = exo.name
+                ingredients = ze.ingredients(exo.ingredients),
+                results = ze.result(exo.name)
             },
             {
                 type = "item",
                 name = exo.name,
                 icon = "__zombiesextended-equipment__/graphics/icons/" .. exo.name .. ".png",
-                icon_size = 64, icon_mipmaps = 4,
+                icon_size = 64,
                 placed_as_equipment_result = exo.name,
                 subgroup = subgroup,
                 order = "dz-" .. exo.order,

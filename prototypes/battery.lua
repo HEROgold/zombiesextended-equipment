@@ -1,3 +1,4 @@
+local ze = require("__zombiesextended-core__.lib")
 
 local subgroup = "equipment"
 
@@ -16,14 +17,14 @@ for x,battery in pairs(personal_battery) do
                 name = battery.name,
                 enabled = false,
                 energy_required = battery.craft_time,
-                ingredients = battery.ingredients,
-                result = battery.name
+                ingredients = ze.ingredients(battery.ingredients),
+                results = ze.result(battery.name)
             },    
             {
                 type = "item",
                 name = battery.name,
                 icon = "__zombiesextended-equipment__/graphics/icons/" .. battery.name .. ".png",
-                icon_size = 64, icon_mipmaps = 4,
+                icon_size = 64,
                 placed_as_equipment_result = battery.name,
                 subgroup = subgroup,
                 order = "bz-" .. battery.order,

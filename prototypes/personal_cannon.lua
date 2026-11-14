@@ -1,3 +1,4 @@
+local ze = require("__zombiesextended-core__.lib")
 
 for x,projectile in pairs(personal_canno_projectile) do
     data:extend(
@@ -125,14 +126,14 @@ for x,pcd in pairs(personal_cannon_device) do
                 name = pcd.name,
                 enabled = false,
                 energy_required = 10,
-                ingredients = pcd.ingredients,
-                result = pcd.name
+                ingredients = ze.ingredients(pcd.ingredients),
+                results = ze.result(pcd.name)
             }, 
             {
                 type = "item",
                 name = pcd.name,
                 icon = "__zombiesextended-equipment__/graphics/icons/" .. pcd.name .. ".png",
-                icon_size = 64, icon_mipmaps = 4,
+                icon_size = 64,
                 placed_as_equipment_result = pcd.name,
                 subgroup = subgroup,
                 order = "c" .. pcd.order,
@@ -178,7 +179,6 @@ for x,pcd in pairs(personal_cannon_device) do
                     ammo_type =
                     {
                         type = "projectile",
-                        category = "electric",
                         energy_consumption = pcd.energy,
                         projectile = pcd.projectile,
                         speed = 1,
@@ -216,14 +216,14 @@ for x,pcd_remote in pairs(personal_cannon_device_remote) do
                 name = pcd_remote.name,
                 enabled = true,
                 energy_required = pcd_remote.craft_time,
-                ingredients = pcd_remote.ingredients,
-                result = pcd_remote.name
+                ingredients = ze.ingredients(pcd_remote.ingredients),
+                results = ze.result(pcd_remote.name)
             },
             {
                 type = "capsule",
                 name = pcd_remote.name,
                 icon = "__zombiesextended-equipment__/graphics/icons/" ..  pcd_remote.name .. ".png",
-                icon_size = 64, icon_mipmaps = 4,
+                icon_size = 64,
                 capsule_action =
                 {
                     type = "equipment-remote",
