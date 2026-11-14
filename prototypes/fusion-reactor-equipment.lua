@@ -26,7 +26,7 @@ for x,reactor in pairs(cfg.fusion_reactor_equipment) do
                 name = reactor.name,
                 icon = "__zombiesextended-equipment__/graphics/icons/" .. reactor.name .. ".png",
                 icon_size = 64,
-                placed_as_equipment_result = reactor.name,
+                place_as_equipment_result = reactor.name,
                 subgroup = subgroup,
                 order = "a[energy-source]-c" .. reactor.order,
                 default_request_amount = 1,

@@ -18,7 +18,7 @@ for x,exo in pairs(cfg.personal_exoskeleton) do
                 name = exo.name,
                 icon = "__zombiesextended-equipment__/graphics/icons/" .. exo.name .. ".png",
                 icon_size = 64,
-                placed_as_equipment_result = exo.name,
+                place_as_equipment_result = exo.name,
                 subgroup = subgroup,
                 order = "dz-" .. exo.order,
                 default_request_amount = 5,

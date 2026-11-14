@@ -19,7 +19,7 @@ for x,shield in pairs(cfg.personal_shield) do
                 name = shield.name,
                 icon = "__zombiesextended-equipment__/graphics/icons/" .. shield.name .. ".png",
                 icon_size = 64,
-                placed_as_equipment_result = shield.name,
+                place_as_equipment_result = shield.name,
                 subgroup = subgroup,
                 order = "a[shield]-" .. shield.order,
                 default_request_amount = 5,

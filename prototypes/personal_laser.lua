@@ -19,7 +19,7 @@ for x,pld in pairs(cfg.personal_laser_device) do
                 name = pld.name,
                 icon = "__zombiesextended-equipment__/graphics/icons/" .. pld.name .. ".png",
                 icon_size = 64,
-                placed_as_equipment_result = pld.name,
+                place_as_equipment_result = pld.name,
                 subgroup = subgroup,
                 order = "c" .. pld.order,
                 default_request_amount = 5,

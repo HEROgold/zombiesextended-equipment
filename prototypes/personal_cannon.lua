@@ -119,7 +119,7 @@ for x,pcd in pairs(cfg.personal_cannon_device) do
                 name = pcd.name,
                 icon = "__zombiesextended-equipment__/graphics/icons/" .. pcd.name .. ".png",
                 icon_size = 64,
-                placed_as_equipment_result = pcd.name,
+                place_as_equipment_result = pcd.name,
                 subgroup = subgroup,
                 order = "c" .. pcd.order,
                 default_request_amount = 5,

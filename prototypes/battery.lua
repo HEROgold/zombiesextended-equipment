@@ -19,7 +19,7 @@ for x,battery in pairs(cfg.personal_battery) do
                 name = battery.name,
                 icon = "__zombiesextended-equipment__/graphics/icons/" .. battery.name .. ".png",
                 icon_size = 64,
-                placed_as_equipment_result = battery.name,
+                place_as_equipment_result = battery.name,
                 subgroup = subgroup,
                 order = "bz-" .. battery.order,
                 default_request_amount = 5,
